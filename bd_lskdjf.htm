@@ -1,0 +1,142 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>Birthdays</title>
+<!--Javacript Functions-->
+<script src="functions.js"></script>
+
+
+
+<meta name="Microsoft Theme" content="artsy 101"><meta name="Microsoft Border" content="t"></head>
+
+<body onload="start()" onunload="stop()" \ \ background="_themes/artsy/arttilea.jpg" bgcolor="#333333" text="#FFFF99" link="#FFCC00" vlink="#999966" alink="#66FF00"><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><td><!--mstheme--><font face="garamond, times new roman, times">
+
+<p align="center"><img src="_derived/bd_lskdjf.htm_cmp_artsy100_bnr.gif" width="600" height="60" border="0" alt="Birthdays"></p>
+<!--mstheme--></font></td></tr><!--msnavigation--></table><!--msnavigation--><table border="0" cellpadding="0" cellspacing="0" width="100%"><tr><!--msnavigation--><td valign="top"><!--mstheme--><font face="garamond, times new roman, times">
+
+<p align="center"><!--webbot bot="Navigation" S-Type="global" S-Orientation="horizontal" S-Rendering="graphics" B-Include-Home="TRUE" B-Include-Up="FALSE" startspan --><a href="./"><img src="_derived/home_cmp_artsy100_gbtn.gif" width="95" height="20" border="0" alt="Home" align="middle"></a><!--webbot bot="Navigation" endspan i-checksum="45333" --> <!-- Insert Form for Javascript Clock --> </p>
+
+<form>
+  <div align="center"><center><p><input type="text" name="display" size="27" DISABLED> <!-- End Load Javascript Clock --></p>
+  </center></div>
+</form>
+
+<h5><!--mstheme--><font face="arial" color="#99CCFF">When is their birthday?...<!--mstheme--></font></h5>
+
+<form name="pick">
+  <!--mstheme--></font><table align="center" width="300" border="2" bordercolordark="#999933" bordercolorlight="#CCCC66">
+    <tr>
+      <td align="left"><!--mstheme--><font face="garamond, times new roman, times">Name</d> <!--mstheme--></font></td>
+      <td align="left"><!--mstheme--><font face="garamond, times new roman, times"><select name="person" size="1">
+      
+	<!-- Create Birthday Dropdown List -->
+      <script type="text/javascript">
+
+       document.write('<option value="0">Select </option>')
+
+       for (i=1; i<=members-1; i++) {
+         document.write('<option value="' + i + '">' + bname[i] + '</option>')
+       }
+
+       </script> <!--mstheme--></font></td>
+    </select>
+    </tr>
+    <tr>
+      <td align="left"><!--mstheme--><font face="garamond, times new roman, times">Birth Date<!--mstheme--></font></td>
+      <td align="left"><!--mstheme--><font face="garamond, times new roman, times"><input type="text" size="21" name="birthdate" DISABLED><!--mstheme--></font></td>
+    </tr>
+    <tr>
+      <td align="center" colspan="2"><!--mstheme--><font face="garamond, times new roman, times"><input type="button" value="Retrieve Date" onClick="update_birthdate();"> <!--mstheme--></font></td>
+    </tr>
+  </table><!--mstheme--><font face="garamond, times new roman, times">
+</form>
+
+<p>&nbsp;</p>
+
+<!--mstheme--></font><table align="center" width="350" border="2" bordercolordark="#999933" bordercolorlight="#CCCC66">
+<!-- Display this months birthdays -->
+  <script type="text/javascript">
+    var time = new Date()
+    var mon = time.getMonth()
+
+    if (mon ==  0) {month = "January"}
+    if (mon ==  1) {month = "February"} 
+    if (mon ==  2) {month = "March"} 
+    if (mon ==  3) {month = "April"} 
+    if (mon ==  4) {month = "May"} 
+    if (mon ==  5) {month = "June"} 
+    if (mon ==  6) {month = "July"} 
+    if (mon ==  7) {month = "August"} 
+    if (mon ==  8) {month = "September"} 
+    if (mon ==  9) {month = "October"} 
+    if (mon == 10) {month = "November"} 
+    if (mon == 11) {month = "December"} 
+
+    // Write Monthly Birthday Table Header
+
+    document.write('<tr>')
+      document.write('<td colspan="2" align="center">')
+        document.write(month.toUpperCase() + " BIRTHDAYS")
+      document.write('</td>')
+    document.write('</tr>')
+
+    // Write Monthly Birthdays in Chronological Order
+
+    cnt = 0
+
+    tmpName = new Array(members)
+    tmpBdate = new Array(members)
+    tmpCnt = 1
+
+    for (i=1; i<=members-1; i++) {
+        if (bdate[i].substring(0,3) == month.substring(0,3)) {
+		tmpName[tmpCnt] = bname[i]
+            tmpBdate[tmpCnt] = bdate[i]
+            tmpCnt = tmpCnt + 1
+        }
+    }
+
+    for (j = 0; j <= 31; j++) {
+      for (i = 1; i <= tmpCnt-1; i++) {
+        if (tmpBdate[i].substring(month.length+1, month.length+3) == j) {
+          document.write('<tr>')
+            document.write('<td>')
+              document.write(tmpName[i])
+            document.write('</td>')
+            document.write('<td>')
+              document.write(tmpBdate[i])
+            document.write('</td>')
+          document.write('</tr>')
+
+          cnt = cnt + 1
+        }
+      }
+    }
+
+    if (cnt == 0) {
+        document.write('<tr>')
+          document.write('<td>')
+            document.write("None")
+          document.write('</td>')
+          document.write('<td>')
+            document.write("None")
+          document.write('</td>')
+        document.write('</tr>')
+    }
+  </script>
+
+</table><!--mstheme--><font face="garamond, times new roman, times">
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><font size="3">Send any corrections or comments to <a href="mailto:rogerio@isp.com?subject=Simply Rojas Website Comment">rogerio@isp.com</a>. </font></p>
+
+<p><font size="3">Note: The email link only works if you have email installed on your
+machine. Otherwise, copy the email address and use the mail service of your choice. </font></p>
+
+<!--msthemeseparator--><p align="center"><img src="_themes/artsy/arthsepd.gif" width="300" height="10"></p>
+<!--mstheme--></font><!--msnavigation--></td></tr><!--msnavigation--></table></body>
+</html>
